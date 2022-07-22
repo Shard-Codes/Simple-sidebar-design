@@ -1,0 +1,210 @@
+/* ============================== Google fonts link - Poppins ==============================*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* ============================== Css variables ==============================*/
+:root {
+  /* =========== Colors =========== */
+  /* Primary */
+  --clr-primary-900: hsl(207, 92%, 9%);
+  --clr-primary-700: hsl(208, 89%, 11%);
+  --clr-primary-600: hsl(207, 90%, 48%);
+
+  /* Neutral */
+  --clr-neutral-900: hsl(210, 10%, 23%);
+  --clr-neutral-600: hsl(210, 7%, 56%);
+  --clr-neutral-200: hsl(0, 0%, 85%);
+  --clr-neutral-100: hsl(0, 0%, 100%);
+
+  /* =========== Typography =========== */
+  /* Fonts */
+  --ff-body: 'Poppins', sans-serif;
+
+  /* Font weights */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semi-bold: 600;
+}
+
+/* ============================== Html reset ==============================*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--clr-neutral-100);
+  font-family: var(--ff-body);
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ============================== Sidebar ==============================*/
+.sidebar {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  left: 0;
+  width: 290px;
+  transition: all .3s;
+  background: var(--clr-primary-900);
+  overflow: hidden;
+}
+
+.navigation {
+  height: 100%;
+}
+
+.sidebar__logo {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  color: var(--clr-neutral-100);
+  margin-bottom: 1.25rem;
+}
+
+.sidebar__logo span {
+  font-weight: var(--fw-semi-bold);
+  font-size: 1.5rem;
+  white-space: nowrap;
+  transition: all .3s;
+}
+
+.sidebar__logo-icon {
+  min-width: 70px;
+  text-align: center;
+  font-size: 1.75rem;
+}
+
+.nav__list {
+  width: 100%;
+}
+
+.nav__item {
+  height: 80px;
+  position: relative;
+}
+
+.nav__link {
+  color: var(--clr-neutral-100);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  transition: all .3s;
+}
+
+.nav__link:hover {
+  background: var(--clr-primary-700);
+}
+
+.nav__link-icon {
+  min-width: 70px;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.nav__link span {
+  font-size: 1.25rem;
+  font-weight: var(--fw-medium);
+  white-space: nowrap;
+  transition: all .3s;
+}
+
+.sidebar__profile {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  margin-left: 18px;
+  width: 100%;
+}
+
+.profile__info {
+  transition: all .3s;
+}
+
+.sidebar__profile-img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.profile__name {
+  font-size: 1.25rem;
+  color: var(--clr-neutral-100);
+  font-weight: var(--fw-medium);
+  display: block;
+  white-space: nowrap;
+}
+
+.profile__profession {
+  font-size: .913rem;
+  font-weight: var(--fw-regular);
+  color: var(--clr-neutral-200);
+}
+
+.log__out-icon {
+  min-width: 70px;
+  margin-left: auto;
+  cursor: pointer;
+  color: var(--clr-neutral-100);
+  font-size: 1.5rem;
+  padding: .75rem;
+  transition: all .3s;
+}
+
+.log__out-icon:hover {
+  background: var(--clr-primary-700);
+}
+
+/* Sidebar toggle class */
+.sidebar.sidebar__close {
+  width: 70px;
+}
+
+.main__content {
+  width: 100%;
+  position: relative;
+  left: 290px;
+  width: calc(100% - 290px);
+  padding: 1.25rem;
+  transition: all .3s;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav__toggler {
+  font-size: 1.75rem;
+  cursor: pointer;
+}
+
+.main__title {
+  font-size: 2rem;
+  color: var(--clr-primary-900);
+  font-weight: var(--fw-semi-bold);
+}
+
+/* Moving the position of the main content along with the sidebar */
+.sidebar.sidebar__close ~ .main__content {
+  left: 70px;
+  width: calc(100% - 70px);
+}
+
+/* Text moving effect */
+.sidebar.sidebar__close .nav__link span,
+.sidebar.sidebar__close .profile__info,
+.sidebar.sidebar__close .sidebar__logo span {
+  transform: translateX(20px);
+}
